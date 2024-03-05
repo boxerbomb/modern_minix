@@ -3892,9 +3892,10 @@ gethere()
 }
 
 
-static int savec(c, bp_int)
+static
+savec(c, bp)
+register struct block *bp;
 {
-	struct block* bp = (struct block*) bp_int;
 	register char *np;
 
 	if (bp->b_start == NULL || bp->b_next+1 >= bp->b_start+bp->b_size) {
